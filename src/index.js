@@ -13,6 +13,8 @@ const createWindow = () => {
     width: 800,
     height: 600,
     webPreferences: {
+      nodeIntegration: true,
+      contextIsolation: false,
       preload: path.join(__dirname, 'preload.js'),
     },
   });
@@ -22,6 +24,9 @@ const createWindow = () => {
 
   // Open the DevTools.
   mainWindow.webContents.openDevTools();
+
+  // 引入主进程文件
+  require('./main/menu');
 };
 
 // This method will be called when Electron has finished
