@@ -5,6 +5,7 @@
   "description": "My Electron application description",
   "main": "src/index.js",
   "scripts": {
+    "dev": "nodemon --watch src/main --exec \"electron-forge start\"",
     "start": "electron-forge start",
     "package": "electron-forge package",
     "make": "electron-forge make",
@@ -53,6 +54,7 @@
     "@electron-forge/maker-rpm": "^6.0.0-beta.65",
     "@electron-forge/maker-squirrel": "^6.0.0-beta.65",
     "@electron-forge/maker-zip": "^6.0.0-beta.65",
-    "electron": "19.0.9"
+    "electron": "19.0.9",
+    "nodemon": "^2.0.19"
   }
 }

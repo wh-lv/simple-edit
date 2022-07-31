@@ -72,8 +72,12 @@ const menuTemplate = [
         ]
     },
     {
-        label: '试图',
+        label: '视图',
         submenu: [
+            {
+                label: '重新加载',
+                role: 'reload'
+            },
             {
                 label: '缩小',
                 role: 'zoomout'
@@ -134,10 +138,10 @@ const contextMenuTemplate = [
         role: 'selectall'
     },
 ];
+
 const contextMenu = Menu.buildFromTemplate(contextMenuTemplate);
 
 ipcMain.on('showContextmenu', (evt, data) => {
-    console.info(evt);
     contextMenu.popup({
         window: BrowserWindow.getFocusedWindow()
     });
